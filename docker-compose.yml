@@ -2,9 +2,11 @@ services:
   ado-mcp:
     build: .
     image: ado-mcp
-    stdin_open: true
-    tty: false
+    ports:
+      - "${PORT:-8080}:8080"
     environment:
       AZURE_DEVOPS_ORG: ${AZURE_DEVOPS_ORG}
       AUTH_METHOD: ${AUTH_METHOD:-pat}
       PERSONAL_ACCESS_TOKEN: ${PERSONAL_ACCESS_TOKEN}
+      MCP_PROXY_API_KEY: ${MCP_PROXY_API_KEY}
+    restart: unless-stopped
