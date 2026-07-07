@@ -10,7 +10,9 @@ docker build -t ado-mcp .
 
 ## Run
 
-Auth via Personal Access Token (PAT). `PERSONAL_ACCESS_TOKEN` must be base64 of `<email>:<pat>`:
+Auth via Personal Access Token (PAT). `PERSONAL_ACCESS_TOKEN` must be base64 of `<email>:<pat>`.
+
+### docker run
 
 ```bash
 PAT_B64=$(printf '%s' "you@example.com:$ADO_PAT" | base64)
@@ -19,6 +21,13 @@ docker run -i --rm \
   -e AZURE_DEVOPS_ORG=<your-org> \
   -e PERSONAL_ACCESS_TOKEN="$PAT_B64" \
   ado-mcp
+```
+
+### docker compose
+
+```bash
+cp .env.example .env   # fill in AZURE_DEVOPS_ORG + PERSONAL_ACCESS_TOKEN
+docker compose run --rm ado-mcp
 ```
 
 ## MCP client config example
