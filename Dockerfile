@@ -12,4 +12,6 @@ ENV HOST=0.0.0.0
 
 EXPOSE 8080
 
+USER node
+
 ENTRYPOINT ["/entrypoint.sh"]
