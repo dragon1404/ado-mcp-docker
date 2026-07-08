@@ -9,7 +9,7 @@ Docker image wrapping Microsoft's [Azure DevOps MCP Server](https://github.com/m
 Pull the prebuilt image from GitHub Container Registry (multi-arch: amd64 + arm64):
 
 ```bash
-docker pull ghcr.io/dragon1404/ado-mcp-docker:main
+docker pull ghcr.io/dragon1404/ado-mcp-docker:latest
 ```
 
 Or build it yourself:
@@ -18,7 +18,7 @@ Or build it yourself:
 docker build -t ado-mcp .
 ```
 
-(Examples below use `ado-mcp` as the tag — swap in `ghcr.io/dragon1404/ado-mcp-docker:main` if you pulled instead of built.)
+(Examples below use `ado-mcp` as the tag — swap in `ghcr.io/dragon1404/ado-mcp-docker:latest` if you pulled instead of built.)
 
 ## Run
 
