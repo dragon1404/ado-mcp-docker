@@ -42,3 +42,4 @@ curl -N -H "X-API-Key: <key>" http://localhost:8080/sse   # expect an `event: en
 - `entrypoint.sh` builds the mcp-proxy arg string unquoted (`$ARGS`) so it word-splits into separate argv entries — do not put spaces inside `MCP_PROXY_API_KEY` or the port/host values.
 - The Azure DevOps server logs its own JSON-formatted lines on startup (org, enabled domains, etc.) before mcp-proxy's plaintext "starting server on port" line — both go to the same stdout stream.
 - `docker build` prints a `SecretsUsedInArgOrEnv` warning for the `AUTH_METHOD` ENV — this is a false positive (it's not secret), left as-is.
+- `docker-publish.yml` builds multi-arch (`linux/amd64,linux/arm64`) via QEMU + buildx so the ghcr.io image pulls natively on Apple Silicon; local `docker build`/`docker compose build` still only produce a single-arch image for your host.

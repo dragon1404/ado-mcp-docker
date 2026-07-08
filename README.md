@@ -1,12 +1,24 @@
 # ado-mcp-docker
 
-Docker image wrapping Microsoft's [Azure DevOps MCP Server](https://github.com/microsoft/azure-devops-mcp) (`@azure-devops/mcp`) and exposing it over HTTP (SSE + streamable) via [`mcp-proxy`](https://github.com/punkpeye/mcp-proxy), since the upstream server only speaks stdio.
+[![Docker](https://github.com/dragon1404/ado-mcp-docker/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/dragon1404/ado-mcp-docker/actions/workflows/docker-publish.yml)
 
-## Build
+Docker image wrapping Microsoft's [Azure DevOps MCP Server](https://github.com/microsoft/azure-devops-mcp) (`@azure-devops/mcp`) and exposing it over HTTP (SSE + streamable) via [`mcp-proxy`](https://github.com/punkpeye/mcp-proxy), since the upstream server only speaks stdio. Runs as non-root.
+
+## Get the image
+
+Pull the prebuilt image from GitHub Container Registry (multi-arch: amd64 + arm64):
+
+```bash
+docker pull ghcr.io/dragon1404/ado-mcp-docker:main
+```
+
+Or build it yourself:
 
 ```bash
 docker build -t ado-mcp .
 ```
+
+(Examples below use `ado-mcp` as the tag — swap in `ghcr.io/dragon1404/ado-mcp-docker:main` if you pulled instead of built.)
 
 ## Run
 
