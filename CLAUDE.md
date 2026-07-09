@@ -14,7 +14,7 @@ Docker image that packages Microsoft's Azure DevOps MCP server (`@azure-devops/m
 
 ```bash
 docker build -t ado-mcp .                    # build image
-docker compose up -d                         # build+run via compose (needs .env, copy from .env.example)
+docker compose -f docker-compose.build.yml up -d   # build+run via compose (needs .env, copy from .env.example)
 docker run -d --rm -p 8080:8080 \
   -e AZURE_DEVOPS_ORG=<org> \
   -e PERSONAL_ACCESS_TOKEN=<base64 email:pat> \

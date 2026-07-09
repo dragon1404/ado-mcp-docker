@@ -1,5 +1,5 @@
 services:
-  ado-mcp-ts:
+  ado-mcp:
     image: ghcr.io/dragon1404/ado-mcp-docker:latest
     ports:
       - "${PORT:-8080}:${PORT:-8080}"

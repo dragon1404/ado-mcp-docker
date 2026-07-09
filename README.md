@@ -40,7 +40,7 @@ docker run -d --rm -p 8080:8080 \
 
 ```bash
 cp .env.example .env   # fill in AZURE_DEVOPS_ORG + PERSONAL_ACCESS_TOKEN
-docker compose up -d
+docker compose -f docker-compose.build.yml up -d
 ```
 
 To pull the prebuilt image instead of building locally, use `docker-compose.remote.yml`:
