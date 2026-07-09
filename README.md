@@ -43,6 +43,13 @@ cp .env.example .env   # fill in AZURE_DEVOPS_ORG + PERSONAL_ACCESS_TOKEN
 docker compose up -d
 ```
 
+To pull the prebuilt image instead of building locally, use `docker-compose.remote.yml`:
+
+```bash
+cp .env.example .env
+docker compose -f docker-compose.remote.yml up -d
+```
+
 ## Endpoint
 
 Server listens on `PORT` (default `8080`), exposing:
